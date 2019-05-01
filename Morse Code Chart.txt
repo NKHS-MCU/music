@@ -1,0 +1,159 @@
+
+void setup() {
+  pinMode(11, OUTPUT);
+  Serial.begin(9600);
+}
+void shorter() {
+  tone(11, 440);
+  delay(100);
+  noTone(11);
+  delay(100);
+}
+void longer() {
+  tone(11, 440);
+  delay(300);
+  noTone(11);
+  delay(100);
+}
+char key;
+void loop() {
+  if (Serial.available()) 
+    {
+      key = Serial.read();
+    }
+    switch (key) {
+      case 'A':
+        shorter();
+        longer();
+        break;
+      case 'B':
+        longer();
+        shorter();
+        shorter();
+        shorter();
+        break;
+      case 'C':
+        longer();
+        shorter();
+        longer();
+        shorter();
+        break;
+      case 'D':
+        longer();
+        shorter();
+        shorter();
+        break;
+      case 'E':
+        shorter();
+        break;
+      case 'F':
+        shorter();
+        shorter();
+        longer();
+        shorter();
+        break;
+      case 'G':
+        longer();
+        longer();
+        shorter();
+        break;
+      case 'H':
+        shorter();
+        shorter();
+        shorter();
+        shorter();
+        break;
+      case 'I':
+        shorter();
+        shorter();
+        break;
+      case 'J':
+        shorter();
+        longer();
+        longer();
+        longer();
+        break;
+      case 'K':
+        longer();
+        shorter();
+        longer();
+        break;
+      case 'L':
+        shorter();
+        longer();
+        shorter();
+        shorter();
+        break;
+      case 'M':
+        longer();
+        longer();
+        break;
+      case 'N':
+        longer();
+        shorter();
+        break;
+      case 'O':
+        longer();
+        longer();
+        break;
+      case 'P':
+        shorter();
+        longer();
+        longer();
+        shorter();
+        break;
+      case 'Q':
+        longer();
+        shorter();
+        longer();
+        longer();
+        break;
+      case 'R':
+        shorter();
+        longer();
+        shorter();
+        break;
+      case 'S':
+        shorter();
+        shorter();
+        shorter();
+        break;
+      case 'T':
+        longer();
+        break;
+      case 'U':
+        shorter();
+        shorter();
+        longer();
+        break;
+      case 'V':
+        shorter();
+        shorter();
+        shorter();
+        longer();
+        break;
+      case 'W':
+        shorter();
+        longer();
+        longer();
+        break;
+      case 'X':
+        longer();
+        shorter();
+        shorter();
+        longer();
+        break;
+      case 'Y':
+        longer();
+        shorter();
+        longer();
+        longer();
+        break;
+      case 'Z':
+        longer();
+        longer();
+        shorter();
+        shorter();
+        break;
+    }
+}
